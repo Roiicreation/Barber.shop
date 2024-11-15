@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Area Amministrativa</title>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #c9a87d;
+            --text: #2c2c2c;
+            --error: #ff4d4d;
+            --success: #4CAF50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+        }
+
+        .login-container {
+            position: relative;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            padding: 3.5rem;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 420px;
+            text-align: center;
+            animation: fadeIn 0.6s ease;
+        }
+
+        .login-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .login-header h2 {
+            font-family: 'Playfair Display', serif;
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .login-header p {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 300;
+            font-size: 1.1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+            position: relative;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 1.2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            font-size: 1rem;
+            color: white;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .login-btn:hover::before {
+            left: 100%;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(201, 168, 125, 0.4);
+        }
+
+        .error-message {
+            color: var(--error);
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            display: none;
+            background: rgba(255, 77, 77, 0.1);
+            padding: 0.8rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 77, 77, 0.2);
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            cursor: pointer;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-btn:hover {
+            transform: translateX(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Effetto focus sui campi input */
+        .form-group input:focus + .focus-border {
+            width: 100%;
+            transition: 0.4s;
+            left: 0;
+        }
+
+        .focus-border {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: 0.4s;
+        }
+
+        @media (max-width: 768px) {
+            .login-container {
+                padding: 2.5rem;
+                margin: 1rem;
+            }
+
+            .back-btn {
+                top: 1rem;
+                left: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-btn">
+        ← Torna alla home
+    </a>
+
+    <div class="login-container">
+        <div class="login-header">
+            <h2>Benvenuto</h2>
+            <p>Accedi all'area amministrativa</p>
+        </div>
+        <form id="loginForm">
+            <div class="form-group">
+                <input type="email" id="email" placeholder="Email" required>
+                <span class="focus-border"></span>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" placeholder="Password" required>
+                <span class="focus-border"></span>
+            </div>
+            <button type="submit" class="login-btn">Accedi</button>
+            <div id="errorMessage" class="error-message"></div>
+        </form>
+    </div>
+
+    <script>
+        // La tua configurazione Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyDlFshRUjs2NyBLiy9Ji31mnKX0BOxncTo",
+            authDomain: "sito-parrucchiere.firebaseapp.com",
+            databaseURL: "https://sito-parrucchiere-default-rtdb.firebaseio.com",
+            projectId: "sito-parrucchiere",
+            storageBucket: "sito-parrucchiere.appspot.com",
+            messagingSenderId: "994870656654",
+            appId: "1:994870656654:web:aa1ff9c14e8ad4235a53df",
+            measurementId: "G-70HLJT6TV8"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+
+        const loginForm = document.getElementById('loginForm');
+        const errorMessage = document.getElementById('errorMessage');
+
+        loginForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const userCredential = await firebase.auth().signInWithEmailAndPassword(email, password);
+                console.log('Login riuscito');
+                window.location.href = 'admin-dashboard.html';
+            } catch (error) {
+                console.error('Errore:', error);
+                errorMessage.textContent = 'Email o password non corretti';
+                errorMessage.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

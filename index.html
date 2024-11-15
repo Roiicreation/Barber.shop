@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barber Shop | Hair Studio</title>
+    <link rel="icon" type="image/png" href="assets/imges/logo.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Montserrat:wght@300;400;500;600;700&display=swap" 
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Aggiungi questo link per il font -->
+    <link href="https://fonts.cdnfonts.com/css/miguel-de-northern" rel="stylesheet">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-logo">
+            <img src="assets/imges/logo.png" alt="Barber Shop Logo">
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="assets/imges/logo.png" alt="Barber Shop Logo">
+            </a>
+            
+            <div class="nav-links">
+                <a href="#home" class="nav-link">
+                    <span>Home</span>
+                </a>
+                <a href="#about" class="nav-link">
+                    <span>Chi Siamo</span>
+                </a>
+                <a href="#services" class="nav-link">
+                    <span>Servizi</span>
+                </a>
+                <a href="#gallery" class="nav-link">
+                    <span>Galleria</span>
+                </a>
+                <a href="#contact" class="nav-link">
+                    <span>Contatti</span>
+                </a>
+                <a href="#book" class="nav-btn">Prenota</a>
+            </div>
+
+            <div class="login-icon" onclick="window.location.href='login.html'">
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+    </nav>
+
+   
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <h1 class="hero-title">
+                <span>Pronto al </span>
+                <span>Taglio</span>
+            </h1>
+            <p class="hero-subtitle">Prenota e siediti, il resto lo facciamo noi !</p>
+            <div class="hero-buttons">
+                <a href="#book" class="btn btn-primary">Prenota Ora</a>
+                <a href="#services" class="btn btn-secondary">Scopri di Più</a>
+            </div>
+        </div>
+        <div class="hero-images">
+            <div class="image-box" data-aos="fade-right">
+                <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800" alt="Hairstyle 1">
+            </div>
+            <div class="image-box" data-aos="fade-left">
+                <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800" alt="Hairstyle 2">
+            </div>
+        </div>
+    </section>
+
+    <!-- Chi Siamo Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Chi Siamo</h2>
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800" alt="Il nostro salone">
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <h3>La Nostra Storia</h3>
+                    <p>Con oltre 15 anni di esperienza, il nostro salone rappresenta l'eccellenza nel mondo dell'hairstyling. La nostra passione si traduce in look personalizzati e all'avanguardia.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="number">15+</span>
+                            <span class="label">Anni di Esperienza</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="number">500+</span>
+                            <span class="label">Clienti Soddisfatti</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servizi Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">I Nostri Servizi</h2>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Taglio</h3>
+                    <p>Taglio personalizzato secondo le ultime tendenze</p>
+                    <span class="price">da €10</span>
+                    <a href="#book" class="service-btn">Prenota</a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Colore</h3>
+                    <p>Colorazione professionale e personalizzata</p>
+                    <span class="price">da €40</span>
+                    <a href="#book" class="service-btn">Prenota</a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Trattamenti</h3>
+                    <p>Trattamenti specifici per la cura dei capelli</p>
+                    <span class="price">da €60</span>
+                    <a href="#book" class="service-btn">Prenota</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="book" class="booking">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Prenota un Appuntamento</h2>
+            <div class="booking-content">
+                <div class="booking-form" data-aos="fade-up">
+                    <!-- Step Indicator -->
+                    <div class="booking-steps">
+                        <div class="step-line">
+                            <div class="step active">
+                                <div class="step-number">1</div>
+                                <span class="step-text">Servizio</span>
+                            </div>
+                            <div class="step active">
+                                <div class="step-number">2</div>
+                                <span class="step-text">Data & Ora</span>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <span class="step-text">Dettagli</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 1: Selezione Servizio -->
+                    <div id="step1" class="form-step">
+                        <div class="step-header">
+                            <h3>Seleziona un Servizio</h3>
+                            <div class="step-subtitle">Scegli il servizio che desideri prenotare</div>
+                            <div class="step-progress">
+                                <div class="step-dot active"></div>
+                                <div class="step-dot"></div>
+                                <div class="step-dot"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="service-grid">
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <i class="fas fa-cut"></i>
+                                </div>
+                                <div class="service-name">Taglio Uomo</div>
+                                <div class="service-info">
+                                    <div class="service-duration">
+                                        <i class="far fa-clock"></i>
+                                        30 min
+                                    </div>
+                                    <div class="service-price">
+                                        <i class="fas fa-tag"></i>
+                                        €10
+                                    </div>
+                                </div>
+                            </div>                            
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <i class="fas fa-female"></i>
+                                </div>
+                                <div class="service-name">Taglio Donna</div>
+                                <div class="service-info">
+                                    <div class="service-duration">
+                                        <i class="far fa-clock"></i>
+                                        45 min
+                                    </div>
+                                    <div class="service-price">
+                                        <i class="fas fa-tag"></i>
+                                        €30
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <i class="fas fa-wind"></i>
+                                </div>
+                                <div class="service-name">barba</div>
+                                <div class="service-info">
+                                    <div class="service-duration">
+                                        <i class="far fa-clock"></i>
+                                        15 min
+                                    </div>
+                                    <div class="service-price">
+                                        <i class="fas fa-tag"></i>
+                                        €7
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <i class="fas fa-paint-brush"></i>
+                                </div>
+                                <div class="service-name">Colore</div>
+                                <div class="service-info">
+                                    <div class="service-duration">
+                                        <i class="far fa-clock"></i>
+                                        90 min
+                                    </div>
+                                    <div class="service-price">
+                                        <i class="fas fa-tag"></i>
+                                        €40
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-navigation">
+                            <button type="button" class="next-step">
+                                Avanti
+                                <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Data e Ora -->
+                    <div id="step2" class="form-step">
+                        <div class="step-header">
+                            <h3>Seleziona Data e Ora</h3>
+                            <div class="step-subtitle">Scegli quando preferisci venire</div>
+                        </div>
+
+                        <div class="booking-container">
+                            <div class="calendar-side">
+                                <div class="calendar-header">
+                                    <span class="prev"><</span>
+                                    <h3 class="calendar-title">novembre 2024</h3>
+                                    <span class="next">></span>
+                                </div>
+                                
+                                <div class="weekdays">
+                                    <div>Lun</div>
+                                    <div>Mar</div>
+                                    <div>Mer</div>
+                                    <div>Gio</div>
+                                    <div>Ven</div>
+                                    <div>Sab</div>
+                                    <div>Dom</div>
+                                </div>
+                                
+                                <div class="days-grid">
+                                    <!-- I giorni verranno generati via JavaScript -->
+                                </div>
+                            </div>
+
+                            <div class="time-slots-side">
+                                <div class="time-period">
+                                    <h4>MATTINA</h4>
+                                    <div class="morning-slots">
+                                        <div class="time-slot">09:00</div>
+                                        <div class="time-slot">09:30</div>
+                                        <div class="time-slot">10:00</div>
+                                        <div class="time-slot">10:30</div>
+                                        <div class="time-slot">11:00</div>
+                                        <div class="time-slot">11:30</div>
+                                        <div class="time-slot">12:00</div>
+                                        <div class="time-slot">12:30</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="time-period">
+                                    <h4>POMERIGGIO</h4>
+                                    <div class="afternoon-slots">
+                                        <div class="time-slot">14:00</div>
+                                        <div class="time-slot">14:30</div>
+                                        <div class="time-slot">15:00</div>
+                                        <div class="time-slot">15:30</div>
+                                        <div class="time-slot">16:00</div>
+                                        <div class="time-slot">16:30</div>
+                                        <div class="time-slot">17:00</div>
+                                        <div class="time-slot">17:30</div>
+                                        <div class="time-slot">18:00</div>
+                                        <div class="time-slot">18:30</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-navigation">
+                            <button type="button" class="prev-step">Indietro</button>
+                            <button type="button" class="next-step">Avanti</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Dettagli Personali -->
+                    <div id="step3" class="form-step">
+                        <div class="step-header">
+                            <h3>Riepilogo Prenotazione</h3>
+                            <div class="step-subtitle">Controlla i dettagli e conferma la prenotazione</div>
+                        </div>
+                        
+                        <div class="appointment-summary">
+                            <div class="summary-row">
+                                <span class="summary-label">Servizio</span>
+                                <span class="summary-value" id="service-summary"></span>
+                            </div>
+                            <div class="summary-row">
+                                <span class="summary-label">Data</span>
+                                <span class="summary-value" id="date-summary"></span>
+                            </div>
+                            <div class="summary-row">
+                                <span class="summary-label">Orario</span>
+                                <span class="summary-value" id="time-summary"></span>
+                            </div>
+                        </div>
+
+                        <form class="details-form" id="details-form">
+                            <div class="form-group">
+                                <input type="text" 
+                                       id="booking-name" 
+                                       name="name" 
+                                       required 
+                                       placeholder="Nome e Cognome"
+                                       pattern="[A-Za-zÀ-ÿ\s]+" 
+                                       title="Inserisci solo lettere"
+                                       onkeypress="return /[A-Za-zÀ-ÿ\s]/i.test(event.key)">
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="tel" 
+                                       id="booking-phone" 
+                                       name="phone" 
+                                       required 
+                                       placeholder="Telefono" 
+                                       pattern="[0-9]{10}" 
+                                       title="Inserisci un numero di telefono valido (10 cifre)"
+                                       maxlength="10">
+                            </div>
+                            
+                            <div class="form-navigation">
+                                <button type="button" class="prev-step">Indietro</button>
+                                <button type="submit" class="confirm-booking">Conferma Prenotazione</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">La Nostra Galleria</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-aos="zoom-in">
+                    <img src="assets/imges/galleria.png" alt="Style 1">
+                </div>
+                <div class="gallery-item" data-aos="zoom-in">
+                    <img src="assets/imges/galleria2.png" alt="Style 2">
+                </div>
+                <div class="gallery-item" data-aos="zoom-in">
+                    <img src="assets/imges/galleriabarba.png" alt="Style 3">
+                </div>
+                <!-- Aggiungi altre immagini secondo necessità -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contattaci</h2>
+            <div class="contact-content">
+                <!-- Info di contatto a sinistra -->
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Indirizzo</h3>
+                        <p>Via Giuseppe Saragat, Castellaneta</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <h3>Telefono</h3>
+                        <p>+39 327 433 7877</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>contact.creationsweb@gmail.com</p>
+                    </div>
+                </div>
+                
+                <!-- Mappa Google con controlli ridotti -->
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3027.7459956083!2d16.93799797677216!3d40.63020397139125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1347983333f0d3f7%3A0x3c7e4050c9c3fc0c!2sVia%20Giuseppe%20Saragat%2C%2074011%20Castellaneta%20TA!5e0!3m2!1sit!2sit!4v1709641145899!5m2!1sit!2sit&maptype=roadmap&style=feature:all|element:geometry|color:0xf5f5f5&style=feature:all|element:labels.text.fill|color:0x616161&style=feature:all|element:labels.text.stroke|color:0xf5f5f5&style=feature:administrative.land_parcel|element:labels.text.fill|color:0xbdbdbd&style=feature:poi|element:geometry|color:0xeeeeee&style=feature:poi|element:labels.text.fill|color:0x757575&style=feature:poi.park|element:geometry|color:0xe5e5e5&style=feature:poi.park|element:labels.text.fill|color:0x9e9e9e&style=feature:road|element:geometry|color:0xffffff&style=feature:road.arterial|element:labels.text.fill|color:0x757575&style=feature:road.highway|element:geometry|color:0xdadada&style=feature:road.highway|element:labels.text.fill|color:0x616161&style=feature:road.local|element:labels.text.fill|color:0x9e9e9e&style=feature:transit.line|element:geometry|color:0xe5e5e5&style=feature:transit.station|element:geometry|color:0xeeeeee&style=feature:water|element:geometry|color:0xc9c9c9&style=feature:water|element:labels.text.fill|color:0x9e9e9e" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        frameborder="0"
+                    ></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
+        import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
+        import { getAuth } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
+    </script>
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/services.js"></script>
+    <script type="module" src="js/calendar.js"></script>
+    <script type="module">
+        import { auth, db } from './js/firebase-config.js';
+        import { doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
+
+        auth.onAuthStateChanged(async (user) => {
+            if (user) {
+                try {
+                    const userDoc = await getDoc(doc(db, 'users', user.uid));
+                    const dashboardLink = document.getElementById('dashboard-link');
+                    
+                    if (userDoc.exists() && 
+                        userDoc.data().role === 'owner' && 
+                        dashboardLink) {
+                        dashboardLink.style.display = 'block';
+                    }
+                } catch (error) {
+                    console.error('Errore nel controllo ruolo utente:', error);
+                }
+            }
+        });
+    </script>
+
+    <!-- Aggiungi questo HTML alla fine del body -->
+    <div class="confirmation-popup">
+        <div class="popup-content">
+            <i class="fas fa-check-circle"></i>
+            <h3>Prenotazione Confermata!</h3>
+            <p>La tua prenotazione è stata effettuata con successo.</p>
+            <p class="booking-details">
+                Data: <span id="confirm-date"></span><br>
+                Ora: <span id="confirm-time"></span><br>
+                Servizio: <span id="confirm-service"></span>
+            </p>
+            <p class="redirect-text">Verrai reindirizzato alla home tra <span id="countdown">5</span> secondi...</p>
+        </div>
+    </div>
+</body>
+</html>

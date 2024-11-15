@@ -1,0 +1,205 @@
+:root {
+    --primary: #ff4f5a;
+    --secondary: #2d3436;
+    --background: #f8f9fa;
+    --text: #2d3436;
+    --gray: #e9ecef;
+    --white: #ffffff;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem 5%;
+    background: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-menu a:hover {
+    color: var(--primary);
+}
+
+.login-btn {
+    background: var(--primary);
+    color: var(--white);
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+/* Hero Section */
+.hero {
+    padding: 8rem 5% 4rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Booking Card */
+.booking-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-top: 3rem;
+    box-shadow: var(--shadow);
+}
+
+.booking-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    padding: 0 2rem;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.step::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: -50%;
+    width: 100%;
+    height: 2px;
+    background: var(--gray);
+    z-index: 0;
+}
+
+.step:last-child::after {
+    display: none;
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+    background: var(--gray);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+}
+
+.step.active .step-number {
+    background: var(--primary);
+    color: var(--white);
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.service-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.service-card h3 {
+    padding: 1rem;
+    margin: 0;
+}
+
+.service-card p {
+    padding: 0 1rem;
+    color: #666;
+}
+
+.select-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.select-btn:hover {
+    background: var(--secondary);
+} 
