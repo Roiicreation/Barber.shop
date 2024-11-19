@@ -13,7 +13,6 @@ async function setUserAsOwner(userId) {
         await setDoc(doc(db, 'users', userId), {
             role: 'owner'
         }, { merge: true });
-        console.log('Ruolo owner assegnato con successo');
     } catch (error) {
         console.error('Errore nell\'assegnazione del ruolo:', error);
     }

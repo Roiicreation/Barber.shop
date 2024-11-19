@@ -270,7 +270,6 @@
 
             try {
                 const userCredential = await firebase.auth().signInWithEmailAndPassword(email, password);
-                console.log('Login riuscito');
                 window.location.href = 'admin-dashboard.html';
             } catch (error) {
                 console.error('Errore:', error);

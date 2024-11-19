@@ -66,8 +66,8 @@ function isServiceSelected() {
 function showServiceSelectionPopup() {
     if (isPopupActive) return;
     
-    console.log('Mostrando popup - Nessun servizio selezionato');
     isPopupActive = true;
+    toggleBodyScroll(true); // Blocca lo scroll
     
     const popup = document.createElement('div');
     popup.className = 'service-selection-popup';
@@ -85,11 +85,11 @@ function showServiceSelectionPopup() {
     // Gestione chiusura
     const closeBtn = popup.querySelector('.close-popup');
     closeBtn.addEventListener('click', () => {
-        console.log('Chiusura popup');
         popup.classList.remove('show');
         setTimeout(() => {
             popup.remove();
             isPopupActive = false;
+            toggleBodyScroll(false); // Riabilita lo scroll
         }, 300);
     });
     
@@ -107,16 +107,11 @@ function handleStep1Navigation(event) {
     event.preventDefault();
     event.stopPropagation();
     
-    console.log('Tentativo di navigazione allo step 2');
-    
     // Verifica se un servizio è selezionato
     const selectedService = document.querySelector('.service-card.selected');
-    console.log('Servizio selezionato:', selectedService ? true : false);
     
     if (!selectedService) {
-        console.log('Nessun servizio selezionato, mostro popup');
         showServiceSelectionPopup();
-        // Importante: blocca qui l'esecuzione
         return false;
     }
     
@@ -136,7 +131,6 @@ function handleStep1Navigation(event) {
 
 // Inizializzazione
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Inizializzazione gestione step 1');
     
     // Rimuovi tutti i listener esistenti dal pulsante Avanti
     const step1NextBtn = document.querySelector('#step1 .next-step');
@@ -351,7 +345,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.target.classList.contains('time-slot') && 
             !e.target.classList.contains('disabled')) {
             
-            console.log('Click su slot orario');
             
             // Rimuovi selezione precedente
             document.querySelectorAll('.time-slot').forEach(slot => {
@@ -365,7 +358,6 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Salva l'orario
             const selectedTime = e.target.textContent.trim();
-            console.log('Orario salvato:', selectedTime);
             localStorage.setItem('selectedTime', selectedTime);
         }
     });
@@ -540,13 +532,8 @@ function isDateTimeSelected() {
     const selectedTime = localStorage.getItem('selectedTime');
     const dateSelected = document.querySelector('.calendar-day.selected');
     const timeSelected = document.querySelector('.time-slot.selected');
-    
-    console.log('Verifica selezioni:');
-    console.log('Data in localStorage:', selectedDate);
-    console.log('Ora in localStorage:', selectedTime);
-    console.log('Data selezionata DOM:', dateSelected);
-    console.log('Ora selezionata DOM:', timeSelected);
-    
+ 
+   
     return selectedDate && selectedTime && dateSelected && timeSelected;
 }
 
@@ -634,48 +621,23 @@ function showConfirmationPopup() {
     });
 }
 
-// Modifica la funzione validateForm esistente
-function validateForm() {
-    const nameInput = document.getElementById('booking-name');
-    const phoneInput = document.getElementById('booking-phone');
-    
-    if (!nameInput || !phoneInput) {
-        console.error('Campi del form non trovati');
-        return false;
+// Funzione unificata per mostrare i popup di validazione
+function showValidationPopup(message) {
+    // Se c'è già un popup attivo, rimuovilo
+    const existingPopup = document.querySelector('.validation-popup');
+    if (existingPopup) {
+        existingPopup.remove();
     }
-    
-    let isValid = true;
-    
-    // Valida Nome e Cognome
-    if (!nameInput.value.trim() || !phoneInput.value.trim()) {
-        showValidationPopup();
-        isValid = false;
-        return isValid;
-    }
-    
-    // Continua con le altre validazioni esistenti
-    if (nameInput.value.trim().length < 3) {
-        showFieldError(nameInput, 'Inserisci nome e cognome validi');
-        isValid = false;
-    }
-    
-    if (!isValidPhoneNumber(phoneInput.value.trim())) {
-        showFieldError(phoneInput, 'Inserisci un numero di telefono valido');
-        isValid = false;
-    }
-    
-    return isValid;
-}
 
-// Aggiungi la funzione per il popup di validazione
-function showValidationPopup() {
+    toggleBodyScroll(true); // Blocca lo scroll
+    
     const popup = document.createElement('div');
     popup.className = 'validation-popup';
     popup.innerHTML = `
         <div class="popup-content">
             <i class="fas fa-exclamation-circle"></i>
             <h3>Attenzione!</h3>
-            <p>Per favore compila tutti i campi obbligatori.</p>
+            <p>${message}</p>
             <button class="close-popup">Chiudi</button>
         </div>
     `;
@@ -689,28 +651,11 @@ function showValidationPopup() {
     const closeBtn = popup.querySelector('.close-popup');
     closeBtn.addEventListener('click', () => {
         popup.classList.remove('show');
-        setTimeout(() => popup.remove(), 300);
+        setTimeout(() => {
+            popup.remove();
+            toggleBodyScroll(false); // Riabilita lo scroll
+        }, 300);
     });
-}
-
-// Funzione per mostrare errori sotto i campi
-function showFieldError(inputElement, message) {
-    const errorDiv = document.createElement('div');
-    errorDiv.className = 'error-message';
-    errorDiv.style.color = '#dc3545';
-    errorDiv.style.fontSize = '14px';
-    errorDiv.style.marginTop = '5px';
-    errorDiv.textContent = message;
-    
-    inputElement.style.borderColor = '#dc3545';
-    inputElement.parentNode.appendChild(errorDiv);
-}
-
-// Funzione per validare il formato del numero di telefono
-function isValidPhoneNumber(phone) {
-    // Accetta numeri di telefono italiani (fissi e mobili)
-    const phoneRegex = /^(\+39)?[0-9]{9,10}$/;
-    return phoneRegex.test(phone.replace(/\s/g, ''));
 }
 
 // Modifica la gestione della conferma prenotazione
@@ -720,15 +665,16 @@ document.addEventListener('DOMContentLoaded', function() {
         confirmButton.addEventListener('click', async function(e) {
             e.preventDefault();
             
-            // Valida il form prima di procedere
-            if (!validateForm()) {
+            const nameInput = document.getElementById('booking-name');
+            const phoneInput = document.getElementById('booking-phone');
+            
+            // Verifica campi obbligatori
+            if (!nameInput.value.trim() || !phoneInput.value.trim()) {
+                showValidationPopup('Per favore compila tutti i campi obbligatori.');
                 return;
             }
             
             try {
-                const nameInput = document.getElementById('booking-name');
-                const phoneInput = document.getElementById('booking-phone');
-                
                 // Crea l'oggetto prenotazione
                 const bookingData = {
                     name: nameInput.value.trim(),
@@ -765,5 +711,46 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Aggiungi questa funzione per la validazione del nome
+function validateNameInput(input) {
+    // Rimuove tutti i caratteri che non sono lettere o spazi
+    input.value = input.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, '');
+}
+
+// Modifica l'event listener per il campo nome
+document.addEventListener('DOMContentLoaded', function() {
+    const nameInput = document.getElementById('booking-name');
+    if (nameInput) {
+        // Previeni l'input di numeri durante la digitazione
+        nameInput.addEventListener('input', function(e) {
+            validateNameInput(this);
+        });
+
+        // Previeni l'incolla di numeri
+        nameInput.addEventListener('paste', function(e) {
+            e.preventDefault();
+            const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+            const cleanText = pastedText.replace(/[^a-zA-ZÀ-ÿ\s]/g, '');
+            this.value = cleanText;
+        });
+
+        // Previeni la digitazione di numeri
+        nameInput.addEventListener('keypress', function(e) {
+            if (!/^[a-zA-ZÀ-ÿ\s]$/.test(e.key)) {
+                e.preventDefault();
+            }
+        });
+    }
+});
+
+// Funzione per gestire lo stato del body
+function toggleBodyScroll(shouldLock) {
+    if (shouldLock) {
+        document.body.classList.add('popup-active');
+    } else {
+        document.body.classList.remove('popup-active');
+    }
+}
 
 

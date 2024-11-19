@@ -62,9 +62,6 @@ function initializeStep3Validation() {
                 time: localStorage.getItem('selectedTime'),
                 service: localStorage.getItem('selectedService')
             };
-
-            // Qui puoi aggiungere la logica per salvare i dati
-            console.log('Dati prenotazione:', bookingData);
             
         } catch (error) {
             console.error('Errore:', error);

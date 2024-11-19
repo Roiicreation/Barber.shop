@@ -116,84 +116,29 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            margin-bottom: 3rem;
+            margin: 2rem 0;
         }
 
         .stat-card {
             background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 20px;
+            padding: 1.5rem;
+            border-radius: 15px;
             border: 1px solid #222;
-            transition: all 0.3s ease;
+            max-width: 300px;
         }
 
-        .stat-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-5px);
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .stat-value {
             font-size: 2.5rem;
             font-weight: 700;
-            margin: 1rem 0;
-            background: linear-gradient(to right, var(--accent), var(--success));
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .stat-label {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .appointments {
-            background: var(--card-bg);
-            border-radius: 20px;
-            padding: 2rem;
-            border: 1px solid #222;
-        }
-
-        .appointments-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-
-        .add-btn {
-            background: var(--accent);
-            color: var(--text);
-            border: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .add-btn:hover {
-            opacity: 0.9;
-            transform: scale(1.05);
-        }
-
-        .appointment-card {
-            display: grid;
-            grid-template-columns: 100px 1fr;
-            gap: 2rem;
-            padding: 1.5rem;
-            border-radius: 15px;
-            background: rgba(255,255,255,0.03);
-            margin-bottom: 1rem;
-        }
-
-        .time {
-            font-size: 1.2rem;
-            font-weight: 700;
+            margin: 0.7rem 0;
             color: var(--accent);
-            min-width: 100px;
         }
 
         .client-info {
@@ -247,37 +192,7 @@
             display: block; /* Mostra solo la sezione attiva */
         }
 
-        /* Stili per la sezione appuntamenti */
-        .appointments-section {
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .appointments-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .date-display {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-        }
-
-        .appointments-stats {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .stat-pill {
+         .stat-pill {
             background: var(--card-bg);
             padding: 0.75rem 1.5rem;
             border-radius: 50px;
@@ -289,152 +204,6 @@
 
         .stat-pill i {
             color: var(--accent);
-        }
-
-        .time-slots {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .time-period h3 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-secondary);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .time-period h3::before {
-            content: '';
-            display: block;
-            width: 8px;
-            height: 8px;
-            background: var(--accent);
-            border-radius: 50%;
-        }
-
-        .appointment-card {
-            display: grid;
-            grid-template-columns: 100px 1fr;
-            gap: 2rem;
-            padding: 1.5rem;
-            border-radius: 15px;
-            background: var(--card-bg);
-            border: 1px solid rgba(255,255,255,0.1);
-            margin-bottom: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .appointment-card:hover {
-            border-color: var(--accent);
-            transform: translateX(5px);
-        }
-
-        .time {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--accent);
-            min-width: 100px;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .client-info {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .client-info h3 {
-            font-size: 1.1rem;
-            margin: 0;
-        }
-
-        .client-info p {
-            color: var(--text-secondary);
-            margin: 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .client-info p i {
-            font-size: 0.9rem;
-            color: var(--accent);
-        }
-
-        /* Animazione per le card */
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .appointment-card {
-            animation: slideIn 0.3s ease forwards;
-        }
-
-        /* Stili per la sezione clienti */
-        .clients-section {
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .clients-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .header-stats {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .stat-pill {
-            background: var(--card-bg);
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .stat-pill i {
-            color: var(--accent);
-        }
-
-        .clients-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .client-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            padding: 1.5rem;
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .client-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-5px);
         }
 
         .client-info {
@@ -1051,19 +820,31 @@
             align-items: center;
             justify-content: center;
             gap: 15px;
+            background: var(--card-bg);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border: 1px solid #222;
         }
 
         .date-nav {
             background: none;
             border: none;
-            color: #00ff88;  /* Il verde che stavi usando */
+            color: var(--accent);
             font-size: 1.2rem;
             cursor: pointer;
             padding: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .date-nav:hover {
+            transform: scale(1.1);
         }
 
         .date-display {
             position: relative;
+            min-width: 200px;
+            text-align: center;
         }
 
         .date-select {
@@ -1071,7 +852,7 @@
             -webkit-appearance: none;
             background: none;
             border: none;
-            color: #FF4D4D;  /* Il rosso del tuo tema */
+            color: var(--accent);
             font-size: 1rem;
             font-weight: 600;
             padding: 8px 25px 8px 10px;
@@ -1084,7 +865,7 @@
             content: '\f107';
             font-family: 'Font Awesome 5 Free';
             font-weight: 900;
-            color: #FF4D4D;
+            color: var(--accent);
             position: absolute;
             right: 5px;
             top: 50%;
@@ -1097,92 +878,1415 @@
             color: var(--text);
             padding: 10px;
         }
-    </style>
-    <!-- Firebase App -->
-    <script type="module">
-        import { db } from './js/firebase-config.js';
-        import { collection, query, where, getDocs } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
 
-        async function loadDashboardAppointments(selectedDate = null) {
-            try {
-                console.log('Inizio caricamento appuntamenti...');
-                
-                // Formatta la data nel formato italiano
-                let searchDate;
-                if (selectedDate) {
-                    searchDate = new Date(selectedDate);
-                } else {
-                    searchDate = new Date();
-                }
-                
-                const giorni = ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'];
-                const mesi = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 
-                             'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
-                
-                // Formatta la data come "Sabato 16 novembre 2024"
-                const dateString = `${giorni[searchDate.getDay()]} ${searchDate.getDate()} ${mesi[searchDate.getMonth()]} ${searchDate.getFullYear()}`;
-                console.log('Data ricerca:', dateString);
+        .date-navigation {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
 
-                // Query al database
-                const bookingsRef = collection(db, 'bookings');
-                const q = query(bookingsRef, where('date', '==', dateString));
-                const snapshot = await getDocs(q);
-                
-                console.log('Query eseguita, documenti trovati:', snapshot.size);
+        .current-date select {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: var(--background-secondary);
+            color: var(--text-primary);
+            font-size: 1rem;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 0.7rem center;
+            background-size: 1em;
+            padding-right: 2.5rem;
+        }
 
-                const morningContainer = document.getElementById('morningAppointments');
-                const afternoonContainer = document.getElementById('afternoonAppointments');
+        .nav-arrow {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
 
-                let morningHTML = '';
-                let afternoonHTML = '';
+        .nav-arrow:hover {
+            background-color: var(--background-secondary);
+        }
 
-                snapshot.forEach(doc => {
-                    const booking = doc.data();
-                    console.log('Processando appuntamento:', booking);
+        .date-navigation {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem;
+        }
 
-                    const appointmentHTML = `
-                        <div class="appointment-card">
-                            <div class="time">
-                                <i class="far fa-clock"></i>
-                                ${booking.time}
-                            </div>
-                            <div class="client-info">
-                                <h3>${booking.name}</h3>
-                                <p>
-                                    <i class="fas fa-cut"></i>
-                                    ${booking.service}
-                                </p>
-                                <p>
-                                    <i class="fas fa-phone"></i>
-                                    ${booking.phone || 'N/A'}
-                                </p>
-                            </div>
-                        </div>
-                    `;
+        .date-display {
+            min-width: 300px;
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
 
-                    const hour = parseInt(booking.time.split(':')[0]);
-                    if (hour < 13) {
-                        morningHTML += appointmentHTML;
-                    } else {
-                        afternoonHTML += appointmentHTML;
-                    }
-                });
+        .nav-arrow {
+            background: none;
+            border: none;
+            color: var(--accent);
+            cursor: pointer;
+            padding: 0.5rem;
+            font-size: 1.2rem;
+        }
 
-                morningContainer.innerHTML = morningHTML || '<p class="no-appointments">Nessun appuntamento</p>';
-                afternoonContainer.innerHTML = afternoonHTML || '<p class="no-appointments">Nessun appuntamento</p>';
+        .nav-arrow:hover {
+            color: var(--accent-hover);
+        }
 
-            } catch (error) {
-                console.error('Errore nel caricamento degli appuntamenti:', error);
-                console.error('Dettagli errore:', error.message);
+        .date-navigation {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .date-title {
+            min-width: 300px;
+            text-align: center;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+        }
+
+        .nav-arrow {
+            background: none;
+            border: none;
+            color: var(--accent);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .nav-arrow:hover {
+            color: var(--accent-hover);
+        }
+
+        .nav-arrow.prev:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .appointments-container {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .appointments-header {
+            margin-bottom: 2rem;
+        }
+
+        .date-navigation {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .nav-arrow {
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .nav-arrow:hover {
+            background: var(--accent);
+            color: var(--background);
+        }
+
+        .current-date {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .appointments-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .time-slot h2 {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .appointments-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .appointments-section {
+            padding: 2rem;
+            color: var(--text);
+        }
+
+        .date-selector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            background: var(--card-bg);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .date-nav {
+            background: none;
+            border: none;
+            color: var(--text);
+            cursor: pointer;
+            padding: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .current-date {
+            font-size: 1.2rem;
+            font-weight: 500;
+            min-width: 200px;
+            text-align: center;
+        }
+
+        .appointments-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        #morning-list,
+        #afternoon-list {
+            min-height: 200px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .appointments-section {
+            display: none;
+            padding: 2rem;
+        }
+
+        .appointments-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .date-navigation {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--card-bg);
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            border: 1px solid #222;
+        }
+
+        .nav-arrow {
+            background: none;
+            border: none;
+            color: var(--text);
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-arrow:hover {
+            color: var(--accent);
+        }
+
+        .current-date {
+            font-weight: 500;
+            min-width: 200px;
+            text-align: center;
+        }
+
+        .appointments-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .time-slot {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid #222;
+        }
+
+        .time-slot h2 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .appointment-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .time {
+            font-weight: 700;
+            color: var(--accent);
+            min-width: 60px;
+        }
+
+        #appointments {
+            padding: 2rem;
+        }
+
+        .appointments-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .date-navigation {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--card-bg);
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+        }
+
+        .date-navigation button {
+            background: none;
+            border: none;
+            color: var(--text);
+            cursor: pointer;
+        }
+
+        .appointments-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .time-slot {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+        }
+
+        .appointment-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .time {
+            font-weight: 700;
+            color: var(--accent);
+            min-width: 60px;
+        }
+
+        .delete-btn {
+            background: none;
+            border: none;
+            color: #666;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            margin-left: auto;
+        }
+
+        .delete-btn:hover {
+            color: var(--accent);
+            background: rgba(255, 77, 77, 0.1);
+        }
+
+        /* Stili per la sezione clienti */
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .client-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid #222;
+            transition: all 0.3s ease;
+        }
+
+        .client-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .client-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .client-name {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .client-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .client-detail {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .client-detail i {
+            color: var(--accent);
+            width: 20px;
+        }
+
+        .client-visits {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #222;
+        }
+
+        .visit-count {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .today-appointments {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .today-appointments-list {
+            margin-top: 1rem;
+        }
+
+        .today-appointments .appointment-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            margin-bottom: 0.5rem;
+        }
+
+        .today-appointments .time {
+            font-weight: 700;
+            color: var(--accent);
+            min-width: 60px;
+        }
+
+        .today-appointments .client-info h3 {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .today-appointments .client-info p {
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .dashboard-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-box {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid #222;
+            min-width: 200px;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+            color: var(--accent);
+        }
+
+        .today-bookings-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .today-booking-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border-left: 3px solid #FF4D4D;
+        }
+
+        .booking-time {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #FF4D4D;
+        }
+
+        .booking-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .booking-name {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .booking-service {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .no-bookings {
+            color: #888;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .bookings-sections {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .section-card {
+            background: #111;
+            border-radius: 15px;
+            border: 1px solid #222;
+            padding: 1.5rem;
+        }
+
+        .section-title {
+            color: #FF4D4D;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title i {
+            font-size: 1.1rem;
+        }
+
+        .bookings-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .booking-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border-left: 3px solid #FF4D4D;
+        }
+
+        .booking-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .booking-name {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .booking-service {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .booking-time {
+            color: #FF4D4D;
+            font-weight: 500;
+        }
+
+        .dashboard-title {
+            color: #FF4D4D;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .dashboard-subtitle {
+            color: #888;
+            margin-bottom: 2rem;
+        }
+
+        .stat-box {
+            background: #111;
+            border-radius: 15px;
+            border: 1px solid #222;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 300px;
+        }
+
+        .stat-label {
+            color: #888;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #FF4D4D;
+            margin-top: 0.5rem;
+        }
+
+        .section-titles {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .section-link {
+            color: #FF4D4D;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .section-link i {
+            font-size: 1.1rem;
+        }
+
+        .dashboard-title {
+            color: #FF4D4D;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .dashboard-subtitle {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-box {
+            background: #111;
+            border-radius: 15px;
+            border: 1px solid #222;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            width: fit-content;
+            min-width: 250px;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-value {
+            color: #FF4D4D;
+            font-size: 3rem;
+            font-weight: bold;
+            margin-top: 0.5rem;
+        }
+
+        .section-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .section-link {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: #FF4D4D;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: opacity 0.2s;
+        }
+
+        .section-link:hover {
+            opacity: 0.8;
+        }
+
+        .section-link i {
+            font-size: 1.3rem;
+        }
+
+        /* Aggiungi questi stili specifici per la dashboard */
+        .dashboard-links {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .dashboard-link {
+            color: var(--accent);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.2rem;
+            transition: opacity 0.3s;
+        }
+
+        .dashboard-link:hover {
+            opacity: 0.8;
+        }
+
+        .dashboard-link i {
+            font-size: 1.3rem;
+        }
+
+        .dashboard-box {
+            background: var(--card-bg);
+            border-radius: 15px;
+            border: 1px solid #222;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .box-header {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .box-header i {
+            font-size: 1.3rem;
+        }
+
+        .box-header h2 {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .bookings-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .booking-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border-left: 3px solid var(--accent);
+        }
+
+        .booking-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .booking-name {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .booking-service {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .booking-time {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .no-bookings {
+            color: var(--text-secondary);
+            text-align: center;
+            padding: 1rem;
+        }
+
+        /* Stili generali per mobile */
+        .dashboard-container {
+            padding: 1rem;
+        }
+
+        /* Box Prenotazioni Totali */
+        .stat-card {
+            width: 100%;
+            max-width: none;
+            margin-bottom: 1rem;
+            padding: 1.2rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+        }
+
+        .stat-value {
+            font-size: 2.2rem;
+        }
+
+        /* Box Prenotazioni */
+        .dashboard-box {
+            width: 100%;
+            margin-top: 1rem;
+            padding: 1rem;
+        }
+
+        .box-header {
+            gap: 0.5rem;
+        }
+
+        .box-header h2 {
+            font-size: 1.1rem;
+        }
+
+        /* Stile delle prenotazioni */
+        .booking-item {
+            padding: 0.8rem;
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: flex-start;
+        }
+
+        .booking-info {
+            width: 100%;
+        }
+
+        .booking-name {
+            font-size: 1rem;
+        }
+
+        .booking-service {
+            font-size: 0.85rem;
+        }
+
+        .booking-time {
+            width: 100%;
+            text-align: left;
+            font-size: 0.9rem;
+            padding-top: 0.3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 768px) {
+            .dashboard-title {
+                font-size: 1.8rem;
+            }
+
+            .dashboard-subtitle {
+                font-size: 0.9rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .bookings-list {
+                gap: 0.8rem;
+            }
+
+            /* Aggiusta spaziature per mobile */
+            .main-content {
+                padding: 1rem;
+                margin-top: 60px;
+            }
+
+            /* Migliora la leggibilità delle date */
+            .booking-time {
+                font-weight: 500;
             }
         }
 
-        // Esposi la funzione globalmente
-        window.loadDashboardAppointments = loadDashboardAppointments;
+        /* Ottimizzazione per schermi molto piccoli */
+        @media screen and (max-width: 360px) {
+            .stat-value {
+                font-size: 2rem;
+            }
 
-        // Carica gli appuntamenti all'avvio
-        document.addEventListener('DOMContentLoaded', loadDashboardAppointments);
-    </script>
+            .box-header h2 {
+                font-size: 1rem;
+            }
+
+            .booking-name {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Stili per la sezione appuntamenti su mobile */
+        @media screen and (max-width: 768px) {
+            /* Container principale */
+            .appointments-container {
+                width: 100%;
+                max-width: 100%;
+                padding: 1rem;
+                overflow-x: hidden;
+            }
+
+            /* Navigazione data */
+            .date-navigation {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.8rem;
+            }
+
+            /* Grid degli appuntamenti */
+            .time-slots-grid {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                gap: 0.5rem;
+            }
+
+            /* Singolo slot appuntamento */
+            .time-slot {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                padding: 0.8rem;
+            }
+
+            /* Contenuto dello slot */
+            .slot-content {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            /* Info appuntamento */
+            .booking-info {
+                flex: 1;
+                min-width: 0; /* Previene overflow */
+            }
+
+            .client-name {
+                font-size: 1rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .service-type {
+                font-size: 0.9rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            /* Pulsanti azione */
+            .booking-actions {
+                display: flex;
+                gap: 0.5rem;
+            }
+
+            .action-btn {
+                padding: 0.5rem;
+                min-width: auto;
+            }
+
+            /* Previeni overflow orizzontale */
+            * {
+                max-width: 100vw;
+                box-sizing: border-box;
+            }
+        }
+
+        /* Ottimizzazione per schermi molto piccoli */
+        @media screen and (max-width: 360px) {
+            .appointments-container {
+                padding: 0.5rem;
+            }
+
+            .time-slot {
+                padding: 0.6rem;
+            }
+
+            .client-name {
+                font-size: 0.9rem;
+            }
+
+            .service-type {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Stili per il modal su mobile */
+        @media screen and (max-width: 768px) {
+            .modal-content {
+                width: 95%;
+                max-width: none;
+                margin: 1rem;
+                padding: 1rem;
+            }
+
+            .modal-header {
+                font-size: 1.2rem;
+                padding-bottom: 0.8rem;
+            }
+
+            .modal-body {
+                padding: 1rem 0;
+            }
+
+            .modal-footer {
+                padding-top: 0.8rem;
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .modal-footer button {
+                width: 100%;
+                padding: 0.8rem;
+            }
+        }
+
+        /* Stili per la visualizzazione verticale degli appuntamenti */
+        .appointments-container {
+            padding: 1rem;
+        }
+
+        /* Controlli data */
+        .date-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .date-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            background: var(--card-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #222;
+        }
+
+        .current-date {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--accent);
+        }
+
+        /* Lista appuntamenti verticale */
+        .appointments-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .appointment-slot {
+            background: var(--card-bg);
+            border: 1px solid #222;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .time-header {
+            color: var(--accent);
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #222;
+        }
+
+        .appointment-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .client-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .client-name {
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        .service-type {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .appointment-actions {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 0.8rem;
+        }
+
+        .action-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .edit-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+        }
+
+        .delete-btn {
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+        }
+
+        .empty-slot {
+            color: var(--text-secondary);
+            text-align: center;
+            padding: 0.5rem;
+        }
+
+        /* Stili per il form di prenotazione */
+        .booking-form {
+            background: var(--card-bg);
+            padding: 1.2rem;
+            border-radius: 8px;
+            border: 1px solid #222;
+            margin-top: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: 6px;
+            border: 1px solid #333;
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+        }
+
+        .form-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .form-actions button {
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .save-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+        }
+
+        .cancel-btn {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid #333;
+        }
+
+        /* Stili per mobile */
+        @media screen and (max-width: 768px) {
+            .appointments-container {
+                padding: 1rem;
+            }
+
+            /* Titolo sezione */
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+            }
+
+            /* Controlli data */
+            .date-controls {
+                flex-direction: column;
+                gap: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            /* Layout verticale per gli appuntamenti */
+            .time-slots-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .time-slot {
+                display: flex;
+                flex-direction: column;
+                background: var(--card-bg);
+                border-radius: 10px;
+                border: 1px solid #222;
+                padding: 1rem;
+            }
+
+            .time-label {
+                color: var(--accent);
+                font-size: 1.1rem;
+                font-weight: 500;
+                margin-bottom: 0.8rem;
+                padding-bottom: 0.5rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .booking-details {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .client-name {
+                font-size: 1rem;
+                color: #fff;
+            }
+
+            .service-type {
+                font-size: 0.9rem;
+                color: var(--text-secondary);
+            }
+
+            .booking-actions {
+                display: flex;
+                gap: 0.8rem;
+                margin-top: 0.8rem;
+                padding-top: 0.8rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .action-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+                border-radius: 6px;
+            }
+
+            .empty-slot {
+                text-align: center;
+                padding: 0.5rem;
+                color: var(--text-secondary);
+            }
+
+            /* Stili per il form di prenotazione su mobile */
+            .booking-form {
+                padding: 1rem;
+            }
+
+            .form-group {
+                margin-bottom: 1rem;
+            }
+
+            .form-actions {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .form-actions button {
+                width: 100%;
+            }
+        }
+
+        /* Ottimizzazione per schermi molto piccoli */
+        @media screen and (max-width: 360px) {
+            .time-label {
+                font-size: 1rem;
+            }
+
+            .client-name {
+                font-size: 0.95rem;
+            }
+
+            .service-type {
+                font-size: 0.85rem;
+            }
+
+            .action-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            /* Ottimizzazioni touch */
+            .action-btn {
+                min-height: 44px; /* Dimensione minima per target touch */
+                min-width: 44px;
+                padding: 0.8rem 1.2rem;
+                margin: 0.3rem 0;
+            }
+
+            .date-nav-btn {
+                min-height: 44px;
+                min-width: 44px;
+                padding: 0.8rem;
+            }
+
+            /* Aumenta area cliccabile */
+            .time-slot {
+                padding: 1.2rem;
+                margin: 0.5rem 0;
+                cursor: pointer;
+                -webkit-tap-highlight-color: transparent; /* Rimuove highlight tap su iOS */
+            }
+
+            /* Migliora scrolling */
+            .time-slots-grid {
+                -webkit-overflow-scrolling: touch; /* Scrolling fluido su iOS */
+                scroll-behavior: smooth;
+                overscroll-behavior: contain; /* Previene scroll bounce */
+            }
+        }
+
+        /* Ottimizzazioni performance */
+        @media screen and (max-width: 768px) {
+            .time-slot {
+                will-change: transform; /* Ottimizza animazioni */
+                transform: translateZ(0); /* Forza GPU rendering */
+            }
+
+            .booking-actions {
+                contain: content; /* Ottimizza rendering */
+            }
+
+            /* Riduce paint operations */
+            * {
+                backface-visibility: hidden;
+                -webkit-backface-visibility: hidden;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            /* Stile per la box della data su mobile */
+            .date-navigation {
+                background: #111;
+                border-radius: 10px;
+                padding: 0.4rem;
+                margin: 0.1rem 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 140%;
+                border: 1px solid #222;
+            }
+
+            .current-date {
+                color: var(--accent);
+                font-size: 1rem;
+                text-align: center;
+                flex: 1;
+                margin: 0 1rem;
+            }
+
+            .date-nav-btn {
+                color: var(--accent);
+                background: transparent;
+                border: none;
+                padding: 0.5rem;
+                cursor: pointer;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -1218,96 +2322,46 @@
 
         <main class="main-content">
             <!-- Sezione Dashboard -->
-            <section id="dashboard" class="section active">
-                <div class="header">
-                    <h1>Dashboard</h1>
-                    <p>Benvenuto nel tuo pannello di controllo</p>
-                </div>
-                <div class="stats-grid">
-                    <!-- Appuntamenti di Oggi -->
-                    <div class="stat-card">
-                        <div class="stat-icon">📅</div>
-                        <div class="stat-info">
-                            <span class="stat-value" id="todayAppointments">0</span>
-                            <span class="stat-label">APPUNTAMENTI OGGI</span>
-                        </div>
-                    </div>
-                    <!-- Clienti di Oggi -->
-                    <div class="stat-card">
-                        <div class="stat-icon">👥</div>
-                        <div class="stat-info">
-                            <span class="stat-value" id="todayClients">0</span>
-                            <span class="stat-label">CLIENTI OGGI</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <div class="section active" id="dashboard">
+                <h1 class="dashboard-title">Dashboard</h1>
+                <p class="dashboard-subtitle">Benvenuto nel tuo pannello di controllo</p>
 
-            <!-- Sezione Appuntamenti -->
-            <section id="appointments" class="section">
-                <div class="header">
-                    <h1>Appuntamenti</h1>
-                </div>
-                
-                <!-- Aggiungi il selettore di data -->
-                <div class="date-navigation">
-                    <button class="date-nav left" onclick="changeDate(-1)">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    
-                    <div class="date-display">
-                        <input type="date" id="datePicker" class="date-picker" onchange="handleDatePicker(this.value)">
-                        <select class="date-select" onchange="handleDateSelection(this.value)">
-                            <option value="today">Oggi</option>
-                            <option value="tomorrow">Domani</option>
-                            <option value="custom">Scegli data...</option>
-                        </select>
-                    </div>
-                    
-                    <button class="date-nav right" onclick="changeDate(1)">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
+                <!-- Box Prenotazioni Totali -->
+                <div class="stat-card">
+                    <div class="stat-label">PRENOTAZIONI TOTALI</div>
+                    <div class="stat-value" id="total-bookings">26</div>
                 </div>
 
-                <div class="time-slots">
-                    <div class="time-period morning">
-                        <h3><i class="fas fa-sun"></i> Mattina</h3>
-                        <div id="morningAppointments" class="appointments-list">
-                            <!-- Gli appuntamenti della mattina verranno caricati qui -->
-                        </div>
+                <!-- Box Prenotazioni Oggi -->
+                <div class="dashboard-box">
+                    <div class="box-header">
+                        <i class="fas fa-calendar-day"></i>
+                        <h2>Prenotazioni Oggi</h2>
                     </div>
-                    
-                    <div class="time-period afternoon">
-                        <h3><i class="fas fa-moon"></i> Pomeriggio</h3>
-                        <div id="afternoonAppointments" class="appointments-list">
-                            <!-- Gli appuntamenti del pomeriggio verranno caricati qui -->
-                        </div>
+                    <div class="bookings-list" id="today-bookings-list">
+                        <!-- Le prenotazioni di oggi verranno caricate qui -->
                     </div>
                 </div>
-            </section>
+
+                <!-- Box Ultime Prenotazioni -->
+                <div class="dashboard-box">
+                    <div class="box-header">
+                        <i class="fas fa-clock"></i>
+                        <h2>Ultime Prenotazioni</h2>
+                    </div>
+                    <div class="bookings-list" id="recent-bookings-list">
+                        <!-- Le ultime prenotazioni verranno caricate qui -->
+                    </div>
+                </div>
+            </div>
 
             <!-- Sezione Clienti -->
             <section id="clients" class="section">
-                <div class="clients-section">
-                    <div class="clients-header">
-                        <h2>Gestione Clienti</h2>
-                        <div class="header-stats">
-                            <div class="stat-pill">
-                                <i class="fas fa-users"></i>
-                                <span>Totale Clienti: </span>
-                                <span id="totalClients">0</span>
-                            </div>
-                            <div class="stat-pill">
-                                <i class="fas fa-user-plus"></i>
-                                <span>Nuovi Oggi: </span>
-                                <span id="newClients">0</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="clients-grid">
-                        <!-- I clienti verranno inseriti qui dinamicamente -->
-                    </div>
+                <div class="clients-header">
+                    <h1>Clienti</h1>
+                </div>
+                <div class="clients-grid">
+                    <!-- I clienti verranno inseriti qui dinamicamente -->
                 </div>
             </section>
 
@@ -1365,6 +2419,33 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Aggiungi questa sezione nel main-content -->
+            <div class="section" id="appointments">
+                <div class="appointments-header">
+                    <h1>Appuntamenti</h1>
+                    <div class="date-navigation">
+                        <button onclick="changeDate(-1)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <span class="current-date"></span>
+                        <button onclick="changeDate(1)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="appointments-grid">
+                    <div class="time-slot">
+                        <h2><i class="fas fa-sun"></i> Mattina</h2>
+                        <div id="morningAppointments"></div>
+                    </div>
+                    <div class="time-slot">
+                        <h2><i class="fas fa-moon"></i> Pomeriggio</h2>
+                        <div id="afternoonAppointments"></div>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 
@@ -1372,6 +2453,80 @@
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
     <script type="module" src="js/statistics.js"></script>
+    <script type="module">
+        import { db } from './js/firebase-config.js';
+        import { collection, query, where, getDocs, orderBy, limit } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
+
+        async function loadDashboardData() {
+            try {
+                // Ottieni la data di oggi formattata
+                const today = new Date();
+                const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+                const todayString = today.toLocaleDateString('it-IT', options);
+                const formattedToday = todayString.charAt(0).toUpperCase() + todayString.slice(1);
+
+                // Query per prenotazioni di oggi
+                const bookingsRef = firebase.firestore().collection('bookings');
+                const todayBookings = await bookingsRef
+                    .where('date', '==', formattedToday)
+                    .orderBy('time')
+                    .get();
+
+                // Aggiorna prenotazioni di oggi
+                let todayHTML = '';
+                todayBookings.forEach(doc => {
+                    const booking = doc.data();
+                    todayHTML += `
+                        <div class="booking-item">
+                            <div class="booking-info">
+                                <span class="booking-name">${booking.name}</span>
+                                <span class="booking-service">${booking.service}</span>
+                            </div>
+                            <span class="booking-time">${booking.time}</span>
+                        </div>
+                    `;
+                });
+                document.getElementById('today-bookings-list').innerHTML = 
+                    todayHTML || '<div class="no-bookings">Nessuna prenotazione per oggi</div>';
+
+                // Query per ultime prenotazioni - CORRETTA
+                const recentBookings = await firebase.firestore().collection('bookings')
+                    .orderBy('createdAt', 'desc')  // Usa il campo createdAt esistente
+                    .limit(5)
+                    .get();
+
+                // Aggiorna ultime prenotazioni
+                let recentHTML = '';
+                recentBookings.forEach(doc => {
+                    const booking = doc.data();
+                    recentHTML += `
+                        <div class="booking-item">
+                            <div class="booking-info">
+                                <span class="booking-name">${booking.name}</span>
+                                <span class="booking-service">${booking.service}</span>
+                            </div>
+                            <div class="booking-time">
+                                ${booking.date}<br>${booking.time}
+                            </div>
+                        </div>
+                    `;
+                });
+                document.getElementById('recent-bookings-list').innerHTML = 
+                    recentHTML || '<div class="no-bookings">Nessuna prenotazione recente</div>';
+
+            } catch (error) {
+                console.error('Errore nel caricamento dei dati:', error);
+                console.error('Dettagli errore:', error.message);
+            }
+        }
+
+        // Inizializzazione e aggiornamento periodico
+        document.addEventListener('DOMContentLoaded', () => {
+            loadDashboardData();
+            // Aggiorna ogni minuto
+            setInterval(loadDashboardData, 60000);
+        });
+    </script>
     <script>
     // Configurazione Firebase
     const firebaseConfig = {
@@ -1413,10 +2568,6 @@
 
             // Aggiorna le statistiche
             const statsHTML = `
-                <div class="stat-card">
-                    <div class="stat-label">Prenotazioni Oggi</div>
-                    <div class="stat-value">${todayBookingsSnapshot.size}</div>
-                </div>
                 <div class="stat-card">
                     <div class="stat-label">Prenotazioni Totali</div>
                     <div class="stat-value">${allBookingsSnapshot.size}</div>
@@ -1480,50 +2631,40 @@
     // Gestione della navigazione aggiornata
     document.querySelectorAll('.nav-item').forEach(item => {
         item.addEventListener('click', () => {
-            // Rimuovi active da tutti
-            document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
-            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-            
-            // Aggiungi active al cliccato
-            item.classList.add('active');
+            // Prima verifica che l'elemento esista
             const sectionId = item.dataset.section;
-            document.getElementById(sectionId).classList.add('active');
-
-            // Carica i dati appropriati per ogni sezione
-            if (sectionId === 'dashboard') {
-                loadDashboardData();
-            } else if (sectionId === 'appointments') {
-                setupRealtimeAppointments();
-            } else if (sectionId === 'clients') {
-                setupRealtimeClients();
-            }
-
-            // Cleanup listeners quando necessario
-            if (sectionId !== 'appointments' && appointmentsListener) {
-                appointmentsListener();
-                appointmentsListener = null;
-            }
-            if (sectionId !== 'clients' && clientsListener) {
-                clientsListener();
-                clientsListener = null;
+            const targetSection = document.querySelector(`[data-section="${sectionId}"]`);
+            
+            if (targetSection) {  // Solo se l'elemento esiste
+                document.querySelectorAll('.section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                targetSection.classList.add('active');
+                
+                // Gestione specifica per i clients
+                if (sectionId === 'clients') {
+                    setupRealtimeClients();
+                }
             }
         });
     });
 
-    // Inizializzazione all'avvio
+
+    // Modifica l'inizializzazione
     document.addEventListener('DOMContentLoaded', () => {
-        // Trova la sezione attiva
-        const activeSection = document.querySelector('.nav-item.active');
-        if (activeSection) {
-            const sectionId = activeSection.dataset.section;
-            if (sectionId === 'dashboard') {
-        loadDashboardData();
-            } else if (sectionId === 'appointments') {
-                setupRealtimeAppointments();
-            } else if (sectionId === 'clients') {
-                setupRealtimeClients();
-            }
-        }
+        // Rimuovi il controllo della sezione attiva qui
+        
+        // Mantieni solo la gestione delle statistiche
+        const periodButtons = document.querySelectorAll('.period-btn');
+        periodButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                periodButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                loadStatistics(button.dataset.period);
+            });
+        });
+
+        loadStatistics('day');
     });
 
     // Funzione per caricare gli appuntamenti
@@ -1605,16 +2746,9 @@
         item.addEventListener('click', () => {
             const sectionId = item.dataset.section;
             if (sectionId === 'appointments') {
-                loadAppointments();
+                setupRealtimeAppointments();
             }
         });
-    });
-
-    // Carica gli appuntamenti all'avvio se siamo nella sezione appuntamenti
-    document.addEventListener('DOMContentLoaded', () => {
-        if (document.querySelector('.nav-item[data-section="appointments"]').classList.contains('active')) {
-            loadAppointments();
-        }
     });
 
     // Variabile per tenere traccia del listener
@@ -1994,24 +3128,6 @@
         }
     }
 
-    // Gestione dei pulsanti periodo
-    document.addEventListener('DOMContentLoaded', () => {
-        const periodButtons = document.querySelectorAll('.period-btn');
-        periodButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Rimuovi active da tutti i bottoni
-                periodButtons.forEach(btn => btn.classList.remove('active'));
-                // Aggiungi active al bottone cliccato
-                button.classList.add('active');
-                // Carica le statistiche per il periodo selezionato
-                loadStatistics(button.dataset.period);
-            });
-        });
-
-        // Carica le statistiche iniziali (giorno)
-        loadStatistics('day');
-    });
-
     // Aggiungi questi stili per i messaggi di errore
     const additionalStyles = `
         .error-message {
@@ -2039,451 +3155,406 @@
     styleSheet.textContent = additionalStyles;
     document.head.appendChild(styleSheet);
 
-    let currentDate = new Date();
-
-    function formatDate(date) {
-        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        return date.toLocaleDateString('it-IT', options);
-    }
-
-    function updateDate() {
-        const daySelector = document.getElementById('daySelector');
-        const dateSelector = document.getElementById('dateSelector');
-        
-        if (daySelector.value === 'custom') {
-            dateSelector.style.display = 'block';
-            return;
-        }
-        
-        dateSelector.valueAsDate = currentDate;
-        loadDashboardAppointments();
-    }
-
-    function changeDate(direction) {
-        currentDate.setDate(currentDate.getDate() + direction);
-        document.getElementById('dateSelector').valueAsDate = currentDate;
-        document.getElementById('daySelector').value = 'custom';
-        loadDashboardAppointments();
-    }
-
-    async function loadDashboardAppointments() {
-        try {
-            const selectedDate = document.getElementById('dateSelector')?.valueAsDate || currentDate;
-            const dateString = formatDate(selectedDate);
-            
-            const bookingsRef = collection(db, 'bookings');
-            const q = query(bookingsRef, where('date', '==', dateString));
-            const snapshot = await getDocs(q);
-
-            const morningContainer = document.getElementById('morningAppointments');
-            const afternoonContainer = document.getElementById('afternoonAppointments');
-
-            let morningHTML = '';
-            let afternoonHTML = '';
-
-            if (snapshot.empty) {
-                const noAppointmentsHTML = '<p class="no-appointments">Nessun appuntamento</p>';
-                morningContainer.innerHTML = noAppointmentsHTML;
-                afternoonContainer.innerHTML = noAppointmentsHTML;
-                return;
-            }
-
-            const appointments = [];
-            snapshot.forEach(doc => {
-                appointments.push({
-                    id: doc.id,
-                    ...doc.data()
-                });
-            });
-
-            // Ordina gli appuntamenti per orario
-            appointments.sort((a, b) => a.time.localeCompare(b.time));
-
-            appointments.forEach(booking => {
-                const appointmentHTML = `
-                    <div class="appointment-card">
-                        <div class="time">
-                            <i class="far fa-clock"></i>
-                            ${booking.time}
-                        </div>
-                        <div class="client-info">
-                            <h3>${booking.name}</h3>
-                            <p>
-                                <i class="fas fa-cut"></i>
-                                ${booking.service}
-                            </p>
-                        </div>
-                    </div>
-                `;
-
-                // Dividi tra mattina e pomeriggio
-                const hour = parseInt(booking.time.split(':')[0]);
-                if (hour < 13) {
-                    morningHTML += appointmentHTML;
-                } else {
-                    afternoonHTML += appointmentHTML;
-                }
-            });
-
-            // Aggiorna il DOM
-            morningContainer.innerHTML = morningHTML || '<p class="no-appointments">Nessun appuntamento</p>';
-            afternoonContainer.innerHTML = afternoonHTML || '<p class="no-appointments">Nessun appuntamento</p>';
-
-        } catch (error) {
-            console.error('Errore nel caricamento degli appuntamenti:', error);
-            console.error('Stack trace:', error.stack);
-        }
-    }
-
-    // Assicurati che la funzione venga chiamata quando necessario
-    document.addEventListener('DOMContentLoaded', () => {
-        const appointmentsSection = document.getElementById('appointments');
-        if (appointmentsSection) {
-            loadDashboardAppointments();
-        }
-    });
-
-    // Aggiorna quando si cambia sezione
-    document.querySelectorAll('.nav-item').forEach(item => {
-        item.addEventListener('click', () => {
-            if (item.dataset.section === 'appointments') {
-                loadDashboardAppointments();
-            }
-        });
-    });
-
-    // Gestione menu mobile
-    document.addEventListener('DOMContentLoaded', () => {
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-        
-        if (menuToggle && navMenu) {
-            menuToggle.addEventListener('click', () => {
-                menuToggle.classList.toggle('active');
-                navMenu.classList.toggle('active');
-            });
-
-            // Chiudi menu quando si clicca un link
-            document.querySelectorAll('.nav-item').forEach(item => {
-                item.addEventListener('click', () => {
-                    menuToggle.classList.remove('active');
-                    navMenu.classList.remove('active');
-                });
-            });
-
-            // Chiudi menu quando si clicca fuori
-            document.addEventListener('click', (e) => {
-                if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-                    menuToggle.classList.remove('active');
-                    navMenu.classList.remove('active');
-                }
-            });
-        }
-    });
-
-    // Funzione per gestire il click su "Scegli data..."
-    function showDatePicker() {
-        const dateInput = document.createElement('input');
-        dateInput.type = 'date';
-        dateInput.id = 'customDatePicker';
-        dateInput.className = 'custom-date-picker';
-        
-        // Imposta la data minima a oggi
-        const today = new Date().toISOString().split('T')[0];
-        dateInput.min = today;
-        
-        // Sostituisci il selettore con l'input date
-        const dateSelector = document.querySelector('.date-display');
-        dateSelector.innerHTML = '';
-        dateSelector.appendChild(dateInput);
-        
-        // Mostra il picker
-        dateInput.showPicker();
-        
-        // Aggiungi event listener per il cambio data
-        dateInput.addEventListener('change', function() {
-            loadDashboardAppointments(this.value);
-        });
-    }
-
-    // Funzione aggiornata per caricare gli appuntamenti
-    async function loadDashboardAppointments(selectedDate = null) {
-        try {
-            let searchDate;
-            if (selectedDate) {
-                searchDate = new Date(selectedDate);
-            } else {
-                searchDate = new Date();
-            }
-            
-            // Aggiungi un giorno per compensare il timezone
-            searchDate.setDate(searchDate.getDate() + 1);
-            
-            const giorni = ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'];
-            const mesi = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 
-                         'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
-            
-            const dateString = `${giorni[searchDate.getDay()]} ${searchDate.getDate()} ${mesi[searchDate.getMonth()]} ${searchDate.getFullYear()}`;
-            console.log('Data ricerca:', dateString);
-
-            // Query al database
-            const bookingsRef = collection(db, 'bookings');
-            const q = query(bookingsRef, where('date', '==', dateString));
-            const snapshot = await getDocs(q);
-            
-            console.log('Query eseguita, documenti trovati:', snapshot.size);
-
-            // Recupera i container
-            const morningContainer = document.getElementById('morningAppointments');
-            const afternoonContainer = document.getElementById('afternoonAppointments');
-
-            if (!morningContainer || !afternoonContainer) {
-                console.error('Container non trovati nel DOM');
-                return;
-            }
-
-            let morningHTML = '';
-            let afternoonHTML = '';
-
-            // Processa i risultati
-            snapshot.forEach(doc => {
-                const booking = doc.data();
-                console.log('Processando appuntamento:', booking);
-
-                const appointmentHTML = `
-                    <div class="appointment-card" data-id="${doc.id}">
-                        <div class="time">
-                            <i class="far fa-clock"></i>
-                            ${booking.time}
-                        </div>
-                        <div class="client-info">
-                            <h3>${booking.name}</h3>
-                            <p>
-                                <i class="fas fa-cut"></i>
-                                ${booking.service}
-                            </p>
-                            <p>
-                                <i class="fas fa-phone"></i>
-                                ${booking.phone || 'N/A'}
-                            </p>
-                        </div>
-                        <div class="actions">
-                            <button onclick="deleteAppointment('${doc.id}')" class="delete-btn">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </div>
-                    </div>
-                `;
-
-                // Dividi tra mattina e pomeriggio
-                const hour = parseInt(booking.time.split(':')[0]);
-                if (hour < 13) {
-                    morningHTML += appointmentHTML;
-                } else {
-                    afternoonHTML += appointmentHTML;
-                }
-            });
-
-            // Aggiorna il DOM
-            morningContainer.innerHTML = morningHTML || '<p class="no-appointments">Nessun appuntamento</p>';
-            afternoonContainer.innerHTML = afternoonHTML || '<p class="no-appointments">Nessun appuntamento</p>';
-
-        } catch (error) {
-            console.error('Errore nel caricamento degli appuntamenti:', error);
-            console.error('Stack trace:', error.stack);
-        }
-    }
-
-    // Funzione per cambiare data con le frecce
-    function changeDate(direction) {
-        try {
-            // Ottieni la data corrente dal database o usa oggi come default
-            let currentDate = new Date();
-            const select = document.querySelector('.date-select-btn');
-            
-            // Aggiungi o sottrai giorni
-            currentDate.setDate(currentDate.getDate() + direction);
-            
-            // Aggiorna la select a "Oggi" se la data è oggi, "Domani" se è domani
-            const today = new Date();
-            const tomorrow = new Date();
-            tomorrow.setDate(tomorrow.getDate() + 1);
-            
-            if (currentDate.toDateString() === today.toDateString()) {
-                select.value = 'today';
-            } else if (currentDate.toDateString() === tomorrow.toDateString()) {
-                select.value = 'tomorrow';
-            } else {
-                select.value = 'custom';
-            }
-            
-            updateDateDisplay(currentDate);
-            loadDashboardAppointments(currentDate);
-            
-        } catch (error) {
-            console.error('Errore nel cambio data:', error);
-        }
-    }
-
-    // Funzione per gestire la selezione della data
-    function handleDateSelection(value) {
-        try {
-            let selectedDate = new Date();
-            const select = document.querySelector('.date-select-btn');
-            
-            switch(value) {
-                case 'today':
-                    // Resetta alla data di oggi
-                    selectedDate = new Date();
-                    break;
-                    
-                case 'tomorrow':
-                    // Imposta la data a domani
-                    selectedDate = new Date();
-                    selectedDate.setDate(selectedDate.getDate() + 1);
-                    break;
-                    
-                case 'custom':
-                    // Apri il date picker nativo
-                    const dateInput = document.createElement('input');
-                    dateInput.type = 'date';
-                    dateInput.style.display = 'none';
-                    document.body.appendChild(dateInput);
-                    
-                    dateInput.addEventListener('change', function() {
-                        selectedDate = new Date(this.value);
-                        updateDateDisplay(selectedDate);
-                        loadDashboardAppointments(selectedDate);
-                        document.body.removeChild(this);
-                        // Resetta la select a "Oggi" dopo la selezione
-                        select.value = 'today';
-                    });
-                    
-                    dateInput.showPicker();
-                    return;
-            }
-            
-            updateDateDisplay(selectedDate);
-            loadDashboardAppointments(selectedDate);
-            
-        } catch (error) {
-            console.error('Errore nella selezione della data:', error);
-        }
-    }
-
-    // Funzione per aggiornare il display della data
-    function updateDateDisplay(date) {
-        const giorni = ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'];
-        const mesi = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 
-                     'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
-        
-        const dateString = `${giorni[date.getDay()]} ${date.getDate()} ${mesi[date.getMonth()]} ${date.getFullYear()}`;
-        
-        const select = document.querySelector('.date-select-btn');
-        if (select) {
-            // Trova l'opzione corrente e aggiorna il suo testo
-            const currentOption = select.options[select.selectedIndex];
-            if (currentOption.value === 'today') {
-                currentOption.text = 'Oggi';
-            } else if (currentOption.value === 'tomorrow') {
-                currentOption.text = 'Domani';
-            } else {
-                currentOption.text = dateString;
-            }
-        }
-    }
-
-    // Inizializza la data all'avvio
-    document.addEventListener('DOMContentLoaded', () => {
-        const today = new Date();
-        updateDateDisplay(today);
-        loadDashboardAppointments(today);
-    });
-
     let currentDisplayDate = new Date();
 
+    function formatDisplayDate(date) {
+        const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+        const formattedDate = date.toLocaleDateString('it-IT', options);
+        // Capitalizza la prima lettera
+        return formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1);
+    }
+
     function changeDate(direction) {
-        try {
-            // Aggiorna la data corrente
-            currentDisplayDate.setDate(currentDisplayDate.getDate() + direction);
-            
-            // Formatta la data
-            const giorni = ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'];
-            const mesi = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 
-                         'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
-            
-            const dateString = `${giorni[currentDisplayDate.getDay()]} ${currentDisplayDate.getDate()} ${mesi[currentDisplayDate.getMonth()]} ${currentDisplayDate.getFullYear()}`;
-            
-            // Aggiorna la select
-            const select = document.querySelector('.date-select');
-            if (select) {
-                const today = new Date();
-                const tomorrow = new Date();
-                tomorrow.setDate(tomorrow.getDate() + 1);
-                
-                if (currentDisplayDate.toDateString() === today.toDateString()) {
-                    select.value = 'today';
-                } else if (currentDisplayDate.toDateString() === tomorrow.toDateString()) {
-                    select.value = 'tomorrow';
-                } else {
-                    select.value = 'custom';
-                    const customOption = select.querySelector('option[value="custom"]');
-                    if (customOption) {
-                        customOption.text = dateString;
-                    }
-                }
+        currentDisplayDate.setDate(currentDisplayDate.getDate() + direction);
+        updateDateDisplay();
+        loadDashboardAppointments(currentDisplayDate);
+    }
+
+    function updateDateDisplay() {
+        const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+        const dateString = currentDisplayDate.toLocaleDateString('it-IT', options);
+        const formattedDate = dateString.charAt(0).toUpperCase() + dateString.slice(1);
+        document.querySelector('.current-date').textContent = formattedDate;
+
+        // Controlla se siamo al giorno corrente
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const current = new Date(currentDisplayDate);
+        current.setHours(0, 0, 0, 0);
+
+        // Trova e gestisci la freccia sinistra usando il selettore corretto
+        const leftArrow = document.querySelector('.fa-chevron-left').parentElement;
+        if (leftArrow) {
+            if (current.getTime() === today.getTime()) {
+                leftArrow.style.display = 'none';
+            } else {
+                leftArrow.style.display = 'block';
             }
-            
-            loadDashboardAppointments(currentDisplayDate);
-            
-        } catch (error) {
-            console.error('Errore nel cambio data:', error);
         }
     }
 
-    function handleDateSelection(value) {
+    async function loadDashboardAppointments(date) {
         try {
-            switch(value) {
-                case 'today':
-                    currentDisplayDate = new Date();
-                    break;
-                    
-                case 'tomorrow':
-                    currentDisplayDate = new Date();
-                    currentDisplayDate.setDate(currentDisplayDate.getDate() + 1);
-                    break;
-                    
-                case 'custom':
-                    const dateInput = document.createElement('input');
-                    dateInput.type = 'date';
-                    dateInput.style.display = 'none';
-                    document.body.appendChild(dateInput);
-                    
-                    dateInput.addEventListener('change', function() {
-                        currentDisplayDate = new Date(this.value);
-                        changeDate(0); // Aggiorna il display senza cambiare data
-                        document.body.removeChild(this);
-                    });
-                    
-                    dateInput.showPicker();
-                    return;
+            const dateString = formatDisplayDate(date);
+            
+            const bookingsRef = db.collection('bookings')
+                .where('date', '==', dateString);
+            
+            const snapshot = await bookingsRef.get();
+
+            let morningHTML = '';
+            let afternoonHTML = '';
+
+            snapshot.forEach(doc => {
+                const booking = doc.data();
+                
+                const appointmentCard = `
+                    <div class="appointment-card">
+                        <div class="time">${booking.time}</div>
+                        <div class="client-info">
+                            <h3>${booking.name}</h3>
+                            <p>${booking.service}</p>
+                        </div>
+                        <button class="delete-btn" onclick="deleteAppointment('${doc.id}')">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                `;
+
+                const hour = parseInt(booking.time.split(':')[0]);
+                if (hour < 13) {
+                    morningHTML += appointmentCard;
+                } else {
+                    afternoonHTML += appointmentCard;
+                }
+            });
+
+            const morningContainer = document.getElementById('morningAppointments');
+            const afternoonContainer = document.getElementById('afternoonAppointments');
+
+            if (morningContainer) {
+                morningContainer.innerHTML = morningHTML || '<p class="no-appointments">Nessun appuntamento</p>';
             }
-            
-            changeDate(0); // Aggiorna il display senza cambiare data
-            
+            if (afternoonContainer) {
+                afternoonContainer.innerHTML = afternoonHTML || '<p class="no-appointments">Nessun appuntamento</p>';
+            }
+
         } catch (error) {
-            console.error('Errore nella selezione della data:', error);
+            console.error('Errore nel caricamento degli appuntamenti:', error);
+            console.error('Dettagli errore:', error.message); // Debug
+        }
+    }
+
+    // Aggiungi la funzione per eliminare gli appuntamenti
+    window.deleteAppointment = async function(appointmentId) {
+        try {
+            await db.collection('bookings').doc(appointmentId).delete();
+            // Ricarica gli appuntamenti dopo l'eliminazione
+            loadDashboardAppointments(currentDisplayDate);
+        } catch (error) {
+            console.error('Errore durante l\'eliminazione:', error);
         }
     }
 
     // Inizializzazione
     document.addEventListener('DOMContentLoaded', () => {
-        const select = document.querySelector('.date-select');
-        if (select) {
-            select.value = 'today';
-        }
+        updateDateDisplay();
         loadDashboardAppointments(currentDisplayDate);
     });
+
+    // Modifica la gestione della navigazione per evitare errori
+    function initializeNavigation() {
+        const navItems = document.querySelectorAll('.nav-item');
+        
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const sectionId = item.dataset.section;
+                const targetSection = document.getElementById(sectionId);
+                
+                if (targetSection) {
+                    // Rimuovi active da tutti
+                    navItems.forEach(navItem => navItem.classList.remove('active'));
+                    document.querySelectorAll('.section').forEach(section => 
+                        section.classList.remove('active'));
+                        
+                    // Attiva la sezione corretta
+                    item.classList.add('active');
+                    targetSection.classList.add('active');
+
+                    // Carica i dati solo per le sezioni che lo richiedono
+                    if (sectionId === 'appointments') {
+                        updateDateDisplay();
+                        loadDashboardAppointments(currentDisplayDate);
+                    } else if (sectionId === 'clients') {
+                        loadClients(); // Carica i clienti una sola volta quando si clicca sulla sezione
+                    }
+                }
+            });
+        });
+    }
+
+    // Inizializza la navigazione solo quando il DOM è pronto
+    document.addEventListener('DOMContentLoaded', () => {
+        initializeNavigation();
+        
+        // Carica gli appuntamenti se siamo nella sezione appuntamenti
+        const appointmentsSection = document.getElementById('appointments');
+        if (appointmentsSection && appointmentsSection.style.display !== 'none') {
+            updateDateDisplay();
+            loadDashboardAppointments(currentDisplayDate);
+        }
+    });
+
+    async function loadClients() {
+        try {
+            const clientsRef = db.collection('bookings');
+            const snapshot = await clientsRef.get();
+            
+            const clientsMap = new Map();
+            
+            snapshot.forEach(doc => {
+                const booking = doc.data();
+                if (!clientsMap.has(booking.name)) {
+                    clientsMap.set(booking.name, {
+                        name: booking.name,
+                        phone: booking.phone,
+                        lastVisit: booking.date,
+                        visits: 1,
+                        services: [booking.service]
+                    });
+                } else {
+                    const client = clientsMap.get(booking.name);
+                    client.visits++;
+                    if (!client.services.includes(booking.service)) {
+                        client.services.push(booking.service);
+                    }
+                    // Aggiorna l'ultima visita se più recente
+                    if (booking.date > client.lastVisit) {
+                        client.lastVisit = booking.date;
+                    }
+                }
+            });
+
+            const clientsGrid = document.querySelector('.clients-grid');
+            let clientsHTML = '';
+
+            clientsMap.forEach(client => {
+                clientsHTML += `
+                    <div class="client-card">
+                        <div class="client-header">
+                            <h3 class="client-name">${client.name}</h3>
+                            <div class="visit-count">
+                                <i class="fas fa-clock"></i>
+                                ${client.visits} visite
+                            </div>
+                        </div>
+                        <div class="client-info">
+                            <div class="client-detail">
+                                <i class="fas fa-phone"></i>
+                                ${client.phone || 'Non disponibile'}
+                            </div>
+                            <div class="client-detail">
+                                <i class="fas fa-calendar"></i>
+                                Ultima visita: ${client.lastVisit}
+                            </div>
+                            <div class="client-detail">
+                                <i class="fas fa-cut"></i>
+                                ${client.services.join(', ')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            if (clientsGrid) {
+                clientsGrid.innerHTML = clientsHTML || '<p class="no-clients">Nessun cliente trovato</p>';
+            }
+
+        } catch (error) {
+            console.error('Errore nel caricamento dei clienti:', error);
+        }
+    }
+
+    async function loadTodayAppointments() {
+        try {
+            // Formatta la data di oggi nello stesso formato usato nel database
+            const today = new Date();
+            const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+            const todayString = today.toLocaleDateString('it-IT', options);
+            const formattedToday = todayString.charAt(0).toUpperCase() + todayString.slice(1);
+            
+
+            const bookingsRef = db.collection('bookings')
+                .where('date', '==', formattedToday);
+            
+            const snapshot = await bookingsRef.get();
+
+            let todayAppointmentsHTML = '';
+            let appointmentCount = 0;
+
+            snapshot.forEach(doc => {
+                const booking = doc.data();
+                
+                todayAppointmentsHTML += `
+                    <div class="appointment-card">
+                        <div class="time">${booking.time}</div>
+                        <div class="client-info">
+                            <h3>${booking.name}</h3>
+                            <p>${booking.service}</p>
+                        </div>
+                    </div>
+                `;
+                appointmentCount++;
+            });
+
+            // Aggiorna il contatore degli appuntamenti
+            const appointmentCounter = document.querySelector('.today-appointments .stat-value');
+            if (appointmentCounter) {
+                appointmentCounter.textContent = appointmentCount;
+            }
+
+            // Aggiorna la lista degli appuntamenti
+            const appointmentsList = document.querySelector('.today-appointments-list');
+            if (appointmentsList) {
+                appointmentsList.innerHTML = todayAppointmentsHTML || '<p>Nessun appuntamento per oggi</p>';
+            }
+
+        } catch (error) {
+            console.error('Errore nel caricamento degli appuntamenti di oggi:', error);
+        }
+    }
+
+    // Aggiungi questa funzione all'inizializzazione
+    document.addEventListener('DOMContentLoaded', () => {
+        loadTodayAppointments();
+    });
+
+    // Aggiungi questo all'inizializzazione
+    document.addEventListener('DOMContentLoaded', () => {
+        
+    });
+
+    // Aggiungi queste funzioni al tuo script esistente
+    function showTodayBookings() {
+        // Implementa la logica per mostrare le prenotazioni di oggi
+    }
+
+    function showRecentBookings() {
+        // Implementa la logica per mostrare le ultime prenotazioni
+    }
+
+    function generateTimeSlotHTML(time, booking = null) {
+        if (window.innerWidth <= 768) {
+            // Layout mobile
+            return `
+                <div class="time-slot">
+                    <div class="time-label">${time}</div>
+                    ${booking ? `
+                        <div class="booking-details">
+                            <div class="client-name">${booking.name}</div>
+                            <div class="service-type">${booking.service}</div>
+                            <div class="booking-actions">
+                                <button class="action-btn edit-btn" onclick="editBooking('${booking.id}')">
+                                    <i class="fas fa-edit"></i> Modifica
+                                </button>
+                                <button class="action-btn delete-btn" onclick="deleteBooking('${booking.id}')">
+                                    <i class="fas fa-trash"></i> Elimina
+                                </button>
+                            </div>
+                        </div>
+                    ` : `
+                        <div class="empty-slot">
+                            <button class="action-btn add-btn" onclick="addBooking('${time}')">
+                                <i class="fas fa-plus"></i> Aggiungi
+                            </button>
+                        </div>
+                    `}
+                </div>
+            `;
+        } else {
+            // Layout desktop (mantieni il layout esistente)
+            return `
+                <div class="time-slot">
+                    // ... il tuo layout desktop esistente ...
+                </div>
+            `;
+        }
+    }
+
+    // Aggiungi un listener per il resize della finestra
+    window.addEventListener('resize', () => {
+        if (document.getElementById('appointments').classList.contains('active')) {
+            loadAppointments(); // Ricarica gli appuntamenti quando cambia la dimensione della finestra
+        }
+    });
+
+    function generateAppointmentSlot(time, booking) {
+        return `
+            <div class="appointment-slot">
+                <div class="appointment-time">${time}</div>
+                <div class="appointment-info">
+                    <div class="client-name">${booking.name}</div>
+                    <div class="service-type">${booking.service}</div>
+                </div>
+                <button class="delete-btn">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </div>
+        `;
+    }
+
+    // Funzione per aggiornare il contatore delle prenotazioni totali
+    async function updateTotalBookings() {
+        try {
+            const snapshot = await db.collection('bookings').get();
+            const totalBookings = snapshot.size;
+            
+            // Aggiorna il numero nella dashboard
+            const totalBookingsElement = document.getElementById('total-bookings');
+            if (totalBookingsElement) {
+                totalBookingsElement.textContent = totalBookings;
+            }
+        } catch (error) {
+            console.error('Errore nel conteggio delle prenotazioni:', error);
+        }
+    }
+
+    // Ascolta i cambiamenti nella collezione bookings
+    function setupRealtimeBookingsCounter() {
+        db.collection('bookings').onSnapshot((snapshot) => {
+            const totalBookings = snapshot.size;
+            const totalBookingsElement = document.getElementById('total-bookings');
+            if (totalBookingsElement) {
+                totalBookingsElement.textContent = totalBookings;
+            }
+        }, (error) => {
+            console.error('Errore nell\'ascolto delle prenotazioni:', error);
+        });
+    }
+
+    // Modifica l'inizializzazione
+    document.addEventListener('DOMContentLoaded', () => {
+        // Inizializza il contatore in tempo reale
+        setupRealtimeBookingsCounter();
+        
+        // ... resto del codice di inizializzazione ...
+    });
+
+    function previousDay() {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        
+        const prevDate = new Date(currentDisplayDate);
+        prevDate.setDate(currentDisplayDate.getDate() - 1);
+        prevDate.setHours(0, 0, 0, 0);
+        
+        // Controlla se la data precedente è prima di oggi
+        if (prevDate >= today) {
+            currentDisplayDate = prevDate;
+            updateDateDisplay();
+            loadDashboardAppointments(currentDisplayDate);
+        }
+    }
     </script>
 </body>
 </html>

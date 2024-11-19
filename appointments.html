@@ -254,7 +254,10 @@
         </main>
     </div>
 
-    <script>
+    <script type="module">
+        import { db } from './js/firebase-config.js';
+        import { collection, query, where, getDocs } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
+
         let currentDate = new Date();
 
         function formatDate(date) {
@@ -274,10 +277,10 @@
                 const selectedDate = document.getElementById('dateSelector').valueAsDate || currentDate;
                 const dateString = formatDate(selectedDate);
                 
-                const bookingsRef = db.collection('bookings')
-                    .where('date', '==', dateString);
-
-                const snapshot = await bookingsRef.get();
+                // Correzione della query Firestore
+                const bookingsRef = collection(db, 'bookings');
+                const q = query(bookingsRef, where('date', '==', dateString));
+                const snapshot = await getDocs(q);
 
                 const appointmentsList = document.querySelector('.appointments-list');
                 let appointmentsHTML = '';
@@ -292,7 +295,10 @@
                     // Ordina gli appuntamenti per orario
                     const appointments = [];
                     snapshot.forEach(doc => {
-                        appointments.push(doc.data());
+                        appointments.push({
+                            ...doc.data(),
+                            id: doc.id // Aggiungi l'ID del documento
+                        });
                     });
                     
                     appointments.sort((a, b) => a.time.localeCompare(b.time));
